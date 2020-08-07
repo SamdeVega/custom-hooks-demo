@@ -1,24 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { FindUsers } from './components/FindUsers';
+import { FindUsersCustomHook } from './components/FindUsersCustomHook';
+import { FindUsersImportedHook } from './components/FindUsersImportedHook';
+import { FindUsersInjectedHook } from './components/FindUsersInjectedHook';
+import { useUserCollection, useUserCollectionMock } from "./customHooks/useUserCollection"
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <strong>Find Users Coupled React Hooks</strong><br />
+      <FindUsers />
+      <strong>Find Users Coupled Custom Hook (Same File)</strong><br />
+      <FindUsersCustomHook />
+      <strong>Find Users Coupled Custom Hook (Imported)</strong><br />
+      <FindUsersImportedHook />
+      <strong>Find Users Decoupled Custom Hook (Injection)</strong><br />
+      <FindUsersInjectedHook useUserCollection={useUserCollection} />
+      <strong>Find Users Decoupled Custom Hook (Mock Injection)</strong><br />
+      <FindUsersInjectedHook useUserCollection={useUserCollectionMock} />
     </div>
   );
 }

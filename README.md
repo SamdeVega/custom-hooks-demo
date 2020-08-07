@@ -1,3 +1,14 @@
+# Custom Hooks Demo
+This is a React demo project used as a proof of concept of how you can use React hooks.
+It includes five examples:
+* React hooks coupled inside the component.
+* Custom hook (React hook wrapped) coupled (declared inside the component).
+* Custom hook coupled (imported from an external component).
+* Custom hook decoupled (injected from a parent component).
+* Custom hook decoupled (mock).
+
+# React Readme
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
