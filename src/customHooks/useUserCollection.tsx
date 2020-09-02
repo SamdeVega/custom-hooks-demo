@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useCallback } from "react"
 
 interface User {
     name: string
@@ -17,7 +17,7 @@ export const useUserCollectionMock = () => {
     const [filter, setFilter] = React.useState("")
     const [userCollection, setUserCollection] = React.useState<User[]>([])
 
-    const loadUsers = () => {
+    const loadUsers = useCallback(() => {
         setUserCollection([
             {name: 'Dave Thomas'},
             {name: 'Kent Beck'},
@@ -27,7 +27,7 @@ export const useUserCollectionMock = () => {
             {name: 'Tim Ottinger'},
             {name: 'Ward Cunningham'},
         ].filter(({name}) => name.toLowerCase().includes(filter)))
-    }
+    }, [filter])
 
     return {filter, setFilter, userCollection, loadUsers}
 }

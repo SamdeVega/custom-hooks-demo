@@ -4,9 +4,7 @@ import { useUserCollection } from "../customHooks/useUserCollection"
 export const FindUsersImportedHook = () => {
     const {filter, setFilter, userCollection, loadUsers} = useUserCollection()
 
-    React.useEffect(() => {
-        loadUsers()
-    }, [filter])
+    React.useEffect(loadUsers, [filter])
 
     return (
         <>

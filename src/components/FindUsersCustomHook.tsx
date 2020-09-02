@@ -20,9 +20,7 @@ const useUserCollection = () => {
 export const FindUsersCustomHook = () => {
     const {filter, setFilter, userCollection, loadUsers} = useUserCollection()
 
-    React.useEffect(() => {
-        loadUsers()
-    }, [filter])
+    React.useEffect(loadUsers, [filter])
 
     return (
         <>
